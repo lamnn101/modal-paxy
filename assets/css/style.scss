@@ -1,0 +1,228 @@
+@import "./reset";
+@import "./global";
+@import "./variable";
+@import "./mixin";
+
+body {
+    @include flex(rowcencen);
+    height: 100vh;
+    background: linear-gradient(
+            to top right,
+            rgb(242, 242, 242),
+            rgb(206, 206, 206)
+        )
+        no-repeat;
+}
+.modal {
+    max-width: 600px;
+    width: 100%;
+    // overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    &__head {
+        @include flex(rowcenbw);
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        padding: 15px 20px;
+        background-color: $white;
+        border-bottom: 1px solid $borderLight;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        img {
+            cursor: pointer;
+        }
+    }
+    &__body {
+        padding: 6px 20px 20px;
+        background-color: $white;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        .channels {
+            @include flex(rowbw);
+            font-size: 12px;
+            .channel__item {
+                @include flex(colcen);
+                width: 100px;
+                padding: 4px 4px 8px;
+                border-radius: 6px;
+                &:hover {
+                    background-color: rgba(42, 115, 204, 0.06);
+                }
+                .item-logo {
+                    width: 64px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+        .main-action {
+            @include flex(rowcen);
+            margin-top: 16px;
+            margin-bottom: 20px;
+            .main-action__search-bar {
+                flex: 1;
+                position: relative;
+                input {
+                    line-height: 16px;
+                    width: 100%;
+                    padding: 9px 12px 9px 36px;
+                    border-radius: 6px;
+                    border: 1px solid $borderDark;
+                    transition: border 0.3s;
+                    &:hover {
+                        border: 1px solid rgba(42, 115, 204, 0.6);
+                    }
+                    &:focus {
+                        border: 1px solid rgba(42, 115, 204, 0.6);
+                        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+                    }
+                    &::placeholder {
+                        color: $greyLight;
+                    }
+                }
+                img {
+                    position: absolute;
+                    @include tfcen(y);
+                    left: 10px;
+                    cursor: pointer;
+                }
+            }
+            .main-action__btn-add-account {
+                @include flex(rowcen);
+                margin-left: 10px;
+                padding: 9px 12px 9px 8px;
+                border: none;
+                background-color: $primaryColor;
+                color: $white;
+                font-weight: 700;
+                border-radius: 6px;
+                transition: background-color 0.3s;
+                &:hover {
+                    background-color: #1f66bb;
+                }
+                img {
+                    margin-right: 4px;
+                }
+            }
+            .main-action__btn-refresh {
+                padding: 8px;
+                border: 1px solid $borderDark;
+                background-color: $white;
+                border-radius: 6px;
+                margin-left: 10px;
+                transition: border 0.3s;
+                &:hover {
+                    border: 1px solid rgba(42, 115, 204, 0.6);
+                }
+            }
+        }
+        #accountTable {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid $borderLight;
+            th,
+            td {
+                padding: 13px 12px;
+                border: 1px solid $borderLight;
+                text-align: left;
+            }
+            th:first-child {
+                width: 42px;
+            }
+            tr:nth-child(odd) {
+                background-color: rgba(42, 115, 204, 0.04);
+            }
+            tr:hover {
+                background-color: rgba(42, 115, 204, 0.06);
+            }
+        }
+        .datapicker {
+            @include flex(rowbw);
+            margin-top: 20px;
+            .datapicker__item {
+                width: calc(50% - 6px);
+                display: flex;
+                flex-direction: column;
+                label {
+                    font-weight: 500;
+                    margin-bottom: 6px;
+                }
+                input {
+                    width: 100%;
+                    padding: 6px 12px;
+                    line-height: 20px;
+                    border: 1px solid $borderDark;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: border 0.3s;
+                    &::-webkit-calendar-picker-indicator {
+                        opacity: 0.3;
+                        margin-right: -6px;
+                    }
+                    &:hover {
+                        border: 1px solid rgba(42, 115, 204, 0.6);
+                    }
+                }
+                .dropdown {
+                    position: relative;
+                    &:hover .dropdown__list {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    &::before {
+                        content: "";
+                        display: block;
+                        height: 4px;
+                        width: 100%;
+                        background-color: transparent;
+                        position: absolute;
+                        top: 100%;
+                    }
+                    .dropdown__select {
+                        @include flex(rowcenbw);
+                        background-color: $white;
+                        border: 1px solid $borderDark;
+                        padding: 8px 8px 8px 12px;
+                        border-radius: 6px;
+                        line-height: 18px;
+                        cursor: pointer;
+                        transition: border 0.3s;
+                        &:hover {
+                            border: 1px solid rgba(42, 115, 204, 0.6);
+                        }
+                    }
+                    .dropdown__list {
+                        visibility: hidden;
+                        opacity: 0;
+                        border: 1px solid $borderDark;
+                        list-style: none;
+                        width: 100%;
+                        padding: 8px 8px;
+                        border-radius: 6px;
+                        margin-top: 4px;
+                        position: absolute;
+                        background-color: $white;
+                        transition: 0.3s;
+                    }
+                    .dropdown__item {
+                        padding: 9px 8px;
+                        line-height: 18px;
+                        border-radius: 4px;
+                        transition: background-color 0.3s;
+                        &:hover {
+                            background-color: rgba(42, 115, 204, 0.08);
+                        }
+                    }
+                }
+            }
+        }
+        .btn-group {
+            @include flex(rowcen);
+            justify-content: flex-end;
+            margin-top: 36px;
+            button + button {
+                margin-left: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Icon -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modal Paxy</title>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="modal__head">
+                <span>Choose Channel</span>
+                <img src="./assets/img/icon-close.svg" alt="icon-close" />
+            </div>
+            <div class="modal__body">
+                <div class="channels">
+                    <div class="channel__item">
+                        <div class="item-logo">
+                            <img src="./assets/img/logo-gg-ads.png" alt="logo-channel" />
+                        </div>
+                        <span class="item-label">Google Ads</span>
+                    </div>
+                    <div class="channel__item">
+                        <div class="item-logo">
+                            <img src="./assets/img/logo-facebook-ads.png" alt="logo-channel" />
+                        </div>
+                        <span class="item-label">Facebook</span>
+                    </div>
+                    <div class="channel__item">
+                        <div class="item-logo">
+                            <img src="./assets/img/logo-google-analytics.png" alt="logo-channel" />
+                        </div>
+                        <span class="item-label">Google Analytics</span>
+                    </div>
+                    <div class="channel__item">
+                        <div class="item-logo">
+                            <img src="./assets/img/logo-tiktok-ads.png" alt="logo-channel" />
+                        </div>
+                        <span class="item-label">Tiktok</span>
+                    </div>
+                    <div class="channel__item">
+                        <div class="item-logo">
+                            <img src="./assets/img/logo-zalo-ads.png" alt="logo-channel" />
+                        </div>
+                        <span class="item-label">Zalo</span>
+                    </div>
+                </div>
+                <div class="main-action">
+                    <div class="main-action__search-bar">
+                        <input type="text" placeholder="Search" />
+                        <img src="./assets/img/icon-search.svg" alt="icon-search" />
+                    </div>
+                    <button class="main-action__btn-add-account">
+                        <img src="./assets/img/icon-plus.svg" alt="icon-plus" />
+                        <span>Add Account</span>
+                    </button>
+                    <button class="main-action__btn-refresh">
+                        <img src="./assets/img/icon-refresh.svg" alt="icon-refresh" />
+                    </button>
+                </div>
+                <table id="accountTable">
+                    <tr>
+                        <th>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                        </th>
+                        <th>All Google Ads Accounts</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>Tiki Account</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>Shopee Account</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>Vstyle Account</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span></span>
+                            </label>
+                        </td>
+                        <td>Lazada Account</td>
+                    </tr>
+                </table>
+                <div class="datapicker">
+                    <div class="datapicker__item">
+                        <label>Re-pull data from</label>
+                        <input type="date" />
+                    </div>
+                    <div class="datapicker__item">
+                        <label>Schedule refesh data</label>
+                        <div class="dropdown">
+                            <div class="dropdown__select">
+                                <span>30 min</span>
+                                <img src="./assets/img/icon-arrow.svg" alt="icon-arrow" />
+                            </div>
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item">15 min</li>
+                                <li class="dropdown__item">30 min</li>
+                                <li class="dropdown__item">45 min</li>
+                                <li class="dropdown__item">60 min</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn--secondary">Cancel</button>
+                    <button class="btn btn--primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
